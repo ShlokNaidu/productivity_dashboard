@@ -303,6 +303,7 @@ textarea {
 }
 
 .todo-list-fullPage .todo-container .allTask {
+    height:100%;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -633,16 +634,26 @@ textarea {
     }
 
     .todo-list-fullPage .todo-container {
-        height: 100%;
+        height: auto;
     }
 
     .todo-list-fullPage .todo-container .addTask {
         width: 100%;
-        height: 150%;
+        height: auto;
+        min-height: 120px;
     }
 
     .todo-list-fullPage .todo-container .allTask {
         width: 100%;
+        max-height: 300px;
+        min-height: 120px;
+        overflow-y: auto;
+        margin-bottom: 10px;
+    }
+
+    /* Ensure tasks are visible and container grows with content */
+    .todo-list-fullPage .todo-container .allTask .task {
+        min-height: 60px;
     }
 
     .dailyPlanner-fullPage h1 {
