@@ -1,0 +1,728 @@
+:root {
+    --pri: #F8F4E1;
+    --sec: #381c0a;
+    --tri1: #FEBA17;
+    --tri2: #74512D;
+    --red: red;
+    --green: rgb(9, 138, 89);
+    --blue: rgb(0, 191, 255);
+    --black: black;
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 300;
+    src: url(./AeonikTRIAL-Light.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 500;
+    src: url(./AeonikTRIAL-Regular.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 700;
+    src: url(./AeonikTRIAL-Bold.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: aeonik;
+    color: white;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+    overflow: auto;
+}
+
+#main {
+    /* height: 100%; */
+    width: 100%;
+    background-color: var(--sec);
+    padding-bottom: 30px;
+    padding: 20px;
+}
+
+.cover {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: var(--tri2);
+    border-radius: 12px;
+}
+
+nav h2 {
+    width: 100%;
+    font-weight: 500;
+    font-size: 45px;
+}
+
+.theme {
+    background-color: var(--pri);
+    color: var(--sec);
+    padding:12px;
+    position: relative;
+    border-radius: 30px;
+    width: 13%;
+    text-align: center;
+    user-select: none;
+}
+
+.theme:hover {
+    cursor: pointer;
+}
+.theme:active{
+    scale:0.95;
+}
+.header {
+    background-image: url(https://images.unsplash.com/photo-1717361279773-b2e7ee713d2e?q=80&w=3869&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center;
+    background-size: cover;
+    height:300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.header .header-1 h1 {
+    font-size: 100px;
+
+}
+
+.header .header-1 h4 {
+    font-size: 70px;
+
+}
+
+.header .header-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+
+.header .header-2 h2 {
+    font-size: 40px;
+
+}
+
+.header .header-2 h3 {
+    font-size: 25px;
+
+}
+
+.header .header-2 div {
+    font-size: 30px;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.weatherIcon {
+    height: 80px;
+}
+
+section.allElems {
+    width: 100%;
+    padding-top: 40px;
+    /* padding: 20px; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: space-between;
+    /* position: absolute; */
+    overflow: auto;
+}
+
+.elem {
+    /* background-color: #feba17; */
+    background-color: var(--tri1);
+    overflow: hidden;
+    border-radius: 10px;
+    height: 450px;
+    width: 350px;
+    font-size: 20px;
+    position: relative;
+    transition: all ease 0.2s;
+}
+
+.elem:hover {
+    cursor: pointer;
+}
+
+.elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.elem h1 {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.elem:active {
+    scale: 0.97;
+}
+
+.fullElem {
+    height: 100%;
+    width: 100%;
+    /* background-color: #381c0a; */
+    background-color: var(--sec);
+    padding: 20px;
+    display: none;
+    position: absolute;
+}
+
+.back {
+    position: absolute;
+    right: 3%;
+    top: 3%;
+    background-color: red;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    transition: all ease 0.2s;
+}
+
+.back:active {
+    scale: 0.95;
+}
+
+.back:hover {
+    cursor: pointer;
+}
+
+.todo-list-fullPage {
+    display: none;
+    overflow: auto;
+}
+
+.todo-list-fullPage h2 {
+    font-size: 65px;
+}
+
+.todo-list-fullPage .todo-container {
+    height: 80%;
+    width: 100%;
+    margin-top: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.todo-list-fullPage .todo-container .addTask {
+    width: 35%;
+    /* background-color: #684728; */
+    background-color: var(--tri2);
+    height: 100%;
+    border-radius: 18px;
+}
+
+.todo-list-fullPage .todo-container .allTask {
+    width: 60%;
+    height: 100%;
+    /* background-color: #684728; */
+    background-color: var(--tri2);
+    border-radius: 18px;
+}
+
+.todo-list-fullPage .todo-container .addTask form {
+    border-radius: 18px;
+    width: 100%;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+
+.todo-list-fullPage .todo-container .addTask form input#task-input,
+textarea,
+form button {
+    font-weight: 700;
+    outline: none;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    padding: 10px 15px;
+    color: var(--pri);
+}
+
+.todo-list-fullPage .todo-container .addTask form input,
+textarea {
+    background-color: var(--sec);
+    resize: none;
+    border: 1px solid rgba(255, 255, 255, 0.258);
+}
+
+.todo-list-fullPage .todo-container .addTask form button {
+    background-color: var(--tri1);
+}
+
+.todo-list-fullPage .todo-container .addTask form button:hover {
+    cursor: pointer;
+}
+
+.todo-list-fullPage .todo-container .addTask form button:active {
+    scale: 0.98;
+}
+
+.todo-list-fullPage .todo-container .allTask {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.258);
+}
+
+.todo-list-fullPage .todo-container .allTask .task {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    justify-content: space-between;
+    background-color: var(--sec);
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.258);
+}
+
+.task h3 span {
+    background-color: red;
+    color: var(--pri);
+    border-radius: 50px;
+    padding: 4px 6px;
+    font-size: 8px;
+    margin-left: 10px;
+}
+
+.task h3 span.true {
+    opacity: 1;
+}
+
+.task h3 span.false {
+    opacity: 0;
+}
+
+.task h3 {
+    display: flex;
+    align-items: flex-start;
+}
+
+.todo-list-fullPage .todo-container .allTask .task .text {
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: auto;
+}
+
+.todo-list-fullPage .todo-container .allTask .task button {
+    background-color: var(--tri1);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.todo-list-fullPage .todo-container .allTask .task button:hover {
+    cursor: pointer;
+}
+
+.todo-list-fullPage .todo-container .allTask .task button:active {
+    scale: 0.98;
+}
+
+/* Scrollbar for modern browsers */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--sec);
+    /* Darker brown background */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--tri1);
+    /* Golden thumb */
+    border-radius: 10px;
+    border: 2px solid var(--sec);
+    /* Optional border for spacing effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--tri1);
+    /* Lighter gold on hover */
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--tri1) var(--sec);
+}
+
+.importantCheckBox {
+    display: flex;
+    width: 100%;
+    gap: 5%;
+    justify-content: flex-start;
+    padding: 10px 0px;
+    padding-left: 8px;
+}
+
+.importantCheckBox input {
+    scale: 2;
+}
+
+.dailyPlanner-fullPage h1 {
+    font-size: 65px;
+}
+
+.dailyPlanner-fullPage .day-planner {
+    background-color: var(--tri2);
+    height: 85%;
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 12px;
+    border: 5px solid var(--pri);
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2%;
+    overflow: auto;
+}
+
+.dailyPlanner-fullPage .day-planner .day-planner-time {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 49%;
+    margin-bottom: 1%;
+}
+
+.day-planner .day-planner-time input {
+    padding: 20px 40px;
+    width: 100%;
+    background-color: var(--sec);
+    border-radius: 5px;
+    border: none;
+    font-size: 30px;
+    outline: none;
+}
+
+.day-planner .day-planner-time p {
+    position: absolute;
+    top: 8%;
+    left: 1%;
+}
+
+.motivation-fullPage .motivation-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 40px 20px;
+    border-radius: 30px;
+    background-color: transparent;
+    /* no base background */
+    overflow: visible;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glowing background layer */
+.motivation-fullPage .motivation-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--tri1);
+    /* or a specific bright color */
+    filter: blur(100px);
+    border-radius: 40px;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+/* Actual visible box */
+.motivation-wrapper {
+    position: relative;
+    z-index: 2;
+    background: var(--tri1);
+    /* same as the blur layer */
+    padding: 30px 25px;
+    border-radius: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    /* optional extra glow */
+}
+
+.motivation-3 {
+    align-self: flex-end;
+}
+
+.motivation-1 {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    border-radius: 999px;
+    color: white;
+    font-weight: bold;
+}
+
+.motivation-2 h1 {
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+.motivation-3 h1 {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+    width: 100%;
+}
+
+.pomodoro-fullPage {
+    position: relative;
+    width: 100%;
+    min-height: 95vh;
+    /*new*/
+}
+
+.pomodoro-fullPage h1 {
+    font-size: 70px;
+    font-weight: 500;
+}
+
+.pomodoro-fullPage .pomo-timer {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.pomo-timer h2 {
+    font-size: 140px;
+    font-weight: 500;
+}
+
+.pomo-timer button {
+    background-color: var(--tri2);
+    padding: 32px 37px;
+    border: none;
+    border-radius: 10px;
+    transition: all ease 0.2s;
+    font-size: 30px;
+    font-weight: 700;
+    box-shadow: 3px 3px 0px black;
+}
+
+.pomo-timer button:active {
+    scale: 0.95;
+    box-shadow: 0px 0px 0px black;
+}
+
+.pomo-timer button:hover {
+    cursor: pointer;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+}
+
+.buttons button {
+    width: 200px;
+}
+
+
+@media (max-width: 480px) {
+    #main {
+        padding: 15px;
+    }
+
+    nav {
+        padding: 10px 5px;
+    }
+
+    nav h2 {
+        font-size: 20px;
+    }
+
+    .theme {
+        padding:7px;
+        font-size: 15px;
+        width:55%;
+    }
+
+    
+
+    section.allElems {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .elem {
+        width: 100%;
+    }
+
+    .back {
+        top: 3%;
+        padding: 10px 15px;
+    }
+
+    .todo-list-fullPage h2 {
+        font-size: 20px;
+    }
+
+    .todo-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .todo-list-fullPage .todo-container {
+        height: 100%;
+    }
+
+    .todo-list-fullPage .todo-container .addTask {
+        width: 100%;
+        height: 150%;
+    }
+
+    .todo-list-fullPage .todo-container .allTask {
+        width: 100%;
+    }
+
+    .dailyPlanner-fullPage h1 {
+        font-size: 35px;
+    }
+
+    .day-planner .day-planner-time input {
+        font-size: 20px;
+    }
+
+    .day-planner .day-planner-time p {
+        top: 5%;
+    }
+
+    .dailyPlanner-fullPage .day-planner .day-planner-time {
+        width: 100%;
+    }
+
+    .motivation-fullPage .motivation-container {
+        height: 60%;
+        width: 95%;
+    }
+
+    .motivation-2 h1 {
+        font-size: 25px;
+    }
+
+    .motivation-3 h1 {
+        font-size: 20px;
+    }
+
+    .pomodoro-fullPage h1 {
+        font-size: 35px;
+    }
+
+    .pomo-timer h2 {
+        font-size: 80px;
+    }
+
+    .pomo-timer button {
+        padding: 22px 27px;
+        font-size: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .header {
+        height: 150px;
+        padding: 5px;
+    }
+
+    .header .header-1 h1 {
+        font-size: 17px;
+        text-shadow: 1.5px 1.5px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .header .header-1 h4 {
+        font-size: 12px;
+        text-shadow: 1.5px 1.5px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .header .header-2 h2 {
+        font-size: 14px;
+        text-shadow: 1.5px 1.5px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .header .header-2 h3 {
+        font-size: 14px;
+        text-shadow: 1.5px 1.5px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .header .header-2 div {
+        font-size: 14px;
+        text-shadow: 1.5px 1.5px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .weatherIcon {
+        height: 30px;
+    }
+
+}
